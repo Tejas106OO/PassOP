@@ -82,33 +82,27 @@ const Manager = () => {
                         Add Password</button>
                 </div>
                 <div className="passwords">
-                    <h2 className='text-white'>Your Passwords</h2>
-                    <table className="table-auto w-full text-white">
+                    <h2 className='font-bold text-2xl py-4 text-white'>Your Passwords</h2>
+                    {passwordArray.length === 0 && <div>No Passwords to Show</div>}
+                        {passwordArray.length   !=0 &&<table className="table-auto w-full text-white rounded-md overflow-hidden">
                         <thead className=' text-white  bg-cyan-600'>
                             <tr>
-                                <th>Song</th>
-                                <th>Artist</th>
-                                <th>Year</th>
+                                <th className='py-2'>Site</th>
+                                <th className='py-2'>Username</th>
+                                <th className='py-2'>Password</th>
                             </tr>
                         </thead>
                         <tbody className='bg-gradient-to-r from-blue-600 to-purple-900'>
-                            <tr>
-                                <td className='text-center w-32'>The Sliding Mr. Bones (Next Stop, Pottersville)</td>
-                                <td className='text-center w-32'>Malcolm Lockyer</td>
-                                <td className='text-center w-32'>1961</td>
+                            {passwordArray.map((item, index)=>{
+                                return <tr key={index}>
+                                <td className='py-2 border border-white text-center w-32'><a href={item.site} target='_blank'>{item.site}</a></td>
+                                <td className='py-2 border border-white text-center w-32'>{item.username}</td>
+                                <td className='py-2 border border-white text-center w-32'>{item.password}</td>
                             </tr>
-                            <tr>
-                                <td className='text-center w-32'>Witchy Woman</td>
-                                <td className='text-center w-32'>The Eagles</td>
-                                <td className='text-center w-32'>1972</td>
-                            </tr>
-                            <tr>
-                                <td className='text-center w-32'>Shining Star</td>
-                                <td className='text-center w-32'>Earth, Wind, and Fire</td>
-                                <td className='text-center w-32'>1975</td>
-                            </tr>
+                            })}
+                     
                         </tbody>
-                    </table>
+                    </table>}
                 </div>
             </div>
 
