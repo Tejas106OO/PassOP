@@ -1,0 +1,65 @@
+/* Animated Background for PassOP (Muted Premium Purple + Cyan + Blue) */
+
+.animated-bg {
+  min-height: 100vh;
+  background: linear-gradient(
+    -45deg,
+    #2e1065,
+    #4c1d95,
+    #1e3a8a,
+    #155e75,
+    #5b21b6,
+    #1e1b4b
+  );
+  background-size: 400% 400%;
+  animation: waveGradient 14s ease infinite;
+}
+
+/* Background Animation */
+@keyframes waveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+/* Animated PassOP Text */
+
+.animated-text {
+  background: linear-gradient(
+    90deg,
+    #a78bfa,
+    #38bdf8,
+    #818cf8,
+    #8b5cf6,
+    #22d3ee
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textWave 5s ease infinite;
+  filter: drop-shadow(0 0 6px rgba(56, 189, 248, 0.18));
+}
+
+/* Text Animation */
+@keyframes textWave {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
